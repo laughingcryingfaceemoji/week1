@@ -1,9 +1,8 @@
 const fs = require('fs');
 
-// 1. Create a sample.txt file and add some text
 fs.writeFileSync('sample.txt', 'This is a sample file with some text.');
 
-// 2. Read the contents of sample.txt using fs.readFile()
+
 fs.readFile('sample.txt', 'utf8', (err, data) => {
   if (err) {
     console.error('Error reading file:', err);
@@ -11,7 +10,7 @@ fs.readFile('sample.txt', 'utf8', (err, data) => {
   }
   console.log('Contents of sample.txt:', data);
 
-  // 3. Write data to output.txt using fs.writeFile()
+  
   const output = `Read from sample.txt:\n${data}`;
   fs.writeFile('output.txt', output, (err) => {
     if (err) {
@@ -19,5 +18,10 @@ fs.readFile('sample.txt', 'utf8', (err, data) => {
       return;
     }
     console.log('Data successfully written to output.txt');
+
   });
 });
+const os = require('os');
+console.log("Platform: " + os.platform());
+console.log("Hostname: " + os.hostname());
+console.log("Architecture: " + os.arch());
